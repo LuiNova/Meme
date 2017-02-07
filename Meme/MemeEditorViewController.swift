@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditorViewController.swift
 //  PickingImages
 //
 //  Created by Torres, Luis on 1/22/17.
@@ -8,28 +8,14 @@
 
 import UIKit
 
-struct Meme {
-    let topText: String
-    let bottomText: String
-    let originalImage: UIImage
-    let memedImage: UIImage
-    
-    // MARK: Initializer
-    
-    init(topText: String, bottomText: String, originalImage: UIImage, memedImage: UIImage) {
-        self.topText = topText
-        self.bottomText = bottomText
-        self.originalImage = originalImage
-        self.memedImage = memedImage
-    }
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
-}
-
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-
+    @IBOutlet weak var memeImageView: UIView!
+    @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
-    @IBOutlet weak var imagePickerView: UIImageView!
+    @IBOutlet weak var navBar: UIToolbar!
+    @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
@@ -141,16 +127,37 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func generateMemedImage() -> UIImage {
         
         // TODO: Hide toolbar and navbar
+        navBar.isHidden = true
+        toolBar.isHidden = true
         
         // Render view to an image
+//        UIGraphicsBeginImageContext(self.memeImageView.frame.size)
+//        memeImageView.drawHierarchy(in: self.memeImageView.frame, afterScreenUpdates: true)
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        // TODO: Show toolbar and navbar
+        print("The y value is \(memeImageView.frame.minY)")
+        print("The y value is \(memeImageView.frame.origin.y)")
         
-        return memedImage
+        // TODO: Show toolbar and navbar - Make this a method
+        navBar.isHidden = false
+        toolBar.isHidden = false
+        
+//        return memedImage
+        return cropImage(memedImage)
+    }
+    
+    func cropImage(_ image: UIImage) -> UIImage {
+        
+        let crop = memeImageView.frame
+        let cgImage = image.cgImage!.cropping(to: crop)
+        
+        let croppedImage: UIImage = UIImage(cgImage: cgImage!)
+        
+        return croppedImage
     }
     
     func save() {
@@ -180,6 +187,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func reset(_ sender: Any) {
+        imagePickerView.image = nil
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
     }
 }
 

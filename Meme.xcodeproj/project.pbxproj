@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		E2176D1F1E35E1010079EC8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2176D1E1E35E1010079EC8A /* AppDelegate.swift */; };
-		E2176D211E35E1010079EC8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2176D201E35E1010079EC8A /* ViewController.swift */; };
+		E2176D211E35E1010079EC8A /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2176D201E35E1010079EC8A /* MemeEditorViewController.swift */; };
 		E2176D241E35E1010079EC8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2176D221E35E1010079EC8A /* Main.storyboard */; };
 		E2176D261E35E1010079EC8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2176D251E35E1010079EC8A /* Assets.xcassets */; };
 		E2176D291E35E1010079EC8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2176D271E35E1010079EC8A /* LaunchScreen.storyboard */; };
+		E2ED3B291E496FBB00B68ADC /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3B281E496FBB00B68ADC /* Meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E2176D1B1E35E1010079EC8A /* PickingImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickingImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2176D1B1E35E1010079EC8A /* Meme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2176D1E1E35E1010079EC8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2176D201E35E1010079EC8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E2176D201E35E1010079EC8A /* MemeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController.swift; sourceTree = "<group>"; };
 		E2176D231E35E1010079EC8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2176D251E35E1010079EC8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2176D281E35E1010079EC8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2176D2A1E35E1010079EC8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2ED3B281E496FBB00B68ADC /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +40,7 @@
 		E2176D121E35E1010079EC8A = {
 			isa = PBXGroup;
 			children = (
-				E2176D1D1E35E1010079EC8A /* PickingImages */,
+				E2176D1D1E35E1010079EC8A /* Meme */,
 				E2176D1C1E35E1010079EC8A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,30 +48,31 @@
 		E2176D1C1E35E1010079EC8A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E2176D1B1E35E1010079EC8A /* PickingImages.app */,
+				E2176D1B1E35E1010079EC8A /* Meme.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E2176D1D1E35E1010079EC8A /* PickingImages */ = {
+		E2176D1D1E35E1010079EC8A /* Meme */ = {
 			isa = PBXGroup;
 			children = (
 				E2176D1E1E35E1010079EC8A /* AppDelegate.swift */,
-				E2176D201E35E1010079EC8A /* ViewController.swift */,
+				E2176D201E35E1010079EC8A /* MemeEditorViewController.swift */,
 				E2176D221E35E1010079EC8A /* Main.storyboard */,
 				E2176D251E35E1010079EC8A /* Assets.xcassets */,
 				E2176D271E35E1010079EC8A /* LaunchScreen.storyboard */,
 				E2176D2A1E35E1010079EC8A /* Info.plist */,
+				E2ED3B281E496FBB00B68ADC /* Meme.swift */,
 			);
-			path = PickingImages;
+			path = Meme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E2176D1A1E35E1010079EC8A /* PickingImages */ = {
+		E2176D1A1E35E1010079EC8A /* Meme */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2176D2D1E35E1010079EC8A /* Build configuration list for PBXNativeTarget "PickingImages" */;
+			buildConfigurationList = E2176D2D1E35E1010079EC8A /* Build configuration list for PBXNativeTarget "Meme" */;
 			buildPhases = (
 				E2176D171E35E1010079EC8A /* Sources */,
 				E2176D181E35E1010079EC8A /* Frameworks */,
@@ -79,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = PickingImages;
+			name = Meme;
 			productName = PickingImages;
-			productReference = E2176D1B1E35E1010079EC8A /* PickingImages.app */;
+			productReference = E2176D1B1E35E1010079EC8A /* Meme.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E2176D161E35E1010079EC8A /* Build configuration list for PBXProject "PickingImages" */;
+			buildConfigurationList = E2176D161E35E1010079EC8A /* Build configuration list for PBXProject "Meme" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -114,7 +117,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E2176D1A1E35E1010079EC8A /* PickingImages */,
+				E2176D1A1E35E1010079EC8A /* Meme */,
 			);
 		};
 /* End PBXProject section */
@@ -137,7 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2176D211E35E1010079EC8A /* ViewController.swift in Sources */,
+				E2ED3B291E496FBB00B68ADC /* Meme.swift in Sources */,
+				E2176D211E35E1010079EC8A /* MemeEditorViewController.swift in Sources */,
 				E2176D1F1E35E1010079EC8A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,9 +264,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T9RE464W96;
-				INFOPLIST_FILE = PickingImages/Info.plist;
+				INFOPLIST_FILE = Meme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.luistorres.PickingImages;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luistorres.Meme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -273,9 +277,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T9RE464W96;
-				INFOPLIST_FILE = PickingImages/Info.plist;
+				INFOPLIST_FILE = Meme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.luistorres.PickingImages;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luistorres.Meme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -284,7 +288,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E2176D161E35E1010079EC8A /* Build configuration list for PBXProject "PickingImages" */ = {
+		E2176D161E35E1010079EC8A /* Build configuration list for PBXProject "Meme" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2176D2B1E35E1010079EC8A /* Debug */,
@@ -293,13 +297,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2176D2D1E35E1010079EC8A /* Build configuration list for PBXNativeTarget "PickingImages" */ = {
+		E2176D2D1E35E1010079EC8A /* Build configuration list for PBXNativeTarget "Meme" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2176D2E1E35E1010079EC8A /* Debug */,
 				E2176D2F1E35E1010079EC8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
