@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var memeImageView: UIView!
     @IBOutlet weak var imagePickerView: UIImageView!
@@ -18,6 +18,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    
+    // MARK: Text Field Delegate objects
+    let memeDelegate = MemeTextFieldDelegate()
     
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
@@ -29,16 +32,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        topTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.textAlignment = .center
-        topTextField.text = "TOP"
-        topTextField.delegate = self
-        
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.textAlignment = .center
-        bottomTextField.text = "BOTTOM"
-        bottomTextField.delegate = self
+
+        instatiateMemeTextField(topTextField)
+        instatiateMemeTextField(bottomTextField)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,53 +96,30 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         dismiss(animated: true, completion: nil)
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        if textField.tag == 0 && textField.text?.lowercased() == "top" {
-            textField.text = ""
-        } else if textField.tag == 1 && textField.text?.lowercased() == "bottom" {
-            textField.text = ""
-        }
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        if textField.tag == 0 && textField.text == "" {
-            textField.text = "TOP"
-        } else if textField.tag == 1 && textField.text == "" {
-            textField.text = "BOTTOM"
-        }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
-        return true;
+    func instatiateMemeTextField(_ textField: UITextField) {
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
+        textField.text = textField == topTextField ? "TOP" : "BOTTOM"
+        textField.delegate = memeDelegate
     }
     
     func generateMemedImage() -> UIImage {
         
-        // TODO: Hide toolbar and navbar
+        // Hiding toolbar and navabar for screenshot
         navBar.isHidden = true
         toolBar.isHidden = true
         
         // Render view to an image
-//        UIGraphicsBeginImageContext(self.memeImageView.frame.size)
-//        memeImageView.drawHierarchy(in: self.memeImageView.frame, afterScreenUpdates: true)
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
 
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        print("The y value is \(memeImageView.frame.minY)")
-        print("The y value is \(memeImageView.frame.origin.y)")
-        
-        // TODO: Show toolbar and navbar - Make this a method
+        // Showing toolbar and navabar
         navBar.isHidden = false
         toolBar.isHidden = false
         
-//        return memedImage
         return cropImage(memedImage)
     }
     
@@ -166,6 +139,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         // Create the meme
         _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
     }
+    
+    func pickAnImage(_ sourceType: UIImagePickerControllerSourceType){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = sourceType
+        present(imagePicker, animated: true, completion: nil)
+    }
 
     @IBAction func shareMeme(_ sender: Any) {
         
@@ -176,17 +156,11 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+        pickAnImage(.photoLibrary)
     }
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
+        pickAnImage(.camera)
     }
     
     @IBAction func reset(_ sender: Any) {

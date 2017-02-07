@@ -13,6 +13,7 @@
 		E2176D261E35E1010079EC8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2176D251E35E1010079EC8A /* Assets.xcassets */; };
 		E2176D291E35E1010079EC8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2176D271E35E1010079EC8A /* LaunchScreen.storyboard */; };
 		E2ED3B291E496FBB00B68ADC /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3B281E496FBB00B68ADC /* Meme.swift */; };
+		E2ED3B2D1E497D7700B68ADC /* MemeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3B2C1E497D7700B68ADC /* MemeTextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E2176D281E35E1010079EC8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2176D2A1E35E1010079EC8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2ED3B281E496FBB00B68ADC /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		E2ED3B2C1E497D7700B68ADC /* MemeTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		E2176D1D1E35E1010079EC8A /* Meme */ = {
 			isa = PBXGroup;
 			children = (
+				E2ED3B2B1E497D1700B68ADC /* Text Field Delegates */,
 				E2176D1E1E35E1010079EC8A /* AppDelegate.swift */,
 				E2176D201E35E1010079EC8A /* MemeEditorViewController.swift */,
 				E2176D221E35E1010079EC8A /* Main.storyboard */,
@@ -65,6 +68,14 @@
 				E2ED3B281E496FBB00B68ADC /* Meme.swift */,
 			);
 			path = Meme;
+			sourceTree = "<group>";
+		};
+		E2ED3B2B1E497D1700B68ADC /* Text Field Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				E2ED3B2C1E497D7700B68ADC /* MemeTextFieldDelegate.swift */,
+			);
+			name = "Text Field Delegates";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +153,7 @@
 			files = (
 				E2ED3B291E496FBB00B68ADC /* Meme.swift in Sources */,
 				E2176D211E35E1010079EC8A /* MemeEditorViewController.swift in Sources */,
+				E2ED3B2D1E497D7700B68ADC /* MemeTextFieldDelegate.swift in Sources */,
 				E2176D1F1E35E1010079EC8A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
