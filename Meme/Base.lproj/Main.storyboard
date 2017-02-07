@@ -24,10 +24,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJ4-87-QVa">
-                                <rect key="frame" x="0.0" y="208" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="145.5" width="375" height="375"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o4K-Hj-n7C">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASH-ci-eRP">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -39,7 +39,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oot-DP-5pR">
-                                        <rect key="frame" x="0.0" y="200" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="325" width="375" height="50"/>
                                         <accessibility key="accessibilityConfiguration" identifier="bottomTextField"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="2uF-2U-sdv"/>
@@ -58,7 +58,7 @@
                                     <constraint firstItem="oot-DP-5pR" firstAttribute="leading" secondItem="fJ4-87-QVa" secondAttribute="leading" id="RSp-pT-sdr"/>
                                     <constraint firstItem="o4K-Hj-n7C" firstAttribute="leading" secondItem="fJ4-87-QVa" secondAttribute="leading" id="Ui3-AB-Von"/>
                                     <constraint firstAttribute="bottom" secondItem="oot-DP-5pR" secondAttribute="bottom" id="aj6-k8-Mo1"/>
-                                    <constraint firstAttribute="width" secondItem="fJ4-87-QVa" secondAttribute="height" multiplier="3:2" id="je9-SE-VNp"/>
+                                    <constraint firstAttribute="width" secondItem="fJ4-87-QVa" secondAttribute="height" multiplier="1:1" id="ixu-jM-S4t"/>
                                     <constraint firstItem="ASH-ci-eRP" firstAttribute="leading" secondItem="fJ4-87-QVa" secondAttribute="leading" id="lCV-fg-lOS"/>
                                     <constraint firstItem="o4K-Hj-n7C" firstAttribute="top" secondItem="fJ4-87-QVa" secondAttribute="top" id="muM-PT-cF7"/>
                                     <constraint firstAttribute="trailing" secondItem="ASH-ci-eRP" secondAttribute="trailing" id="nb6-xt-u0f"/>
