@@ -44,6 +44,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         // If imageView is empty then disable share button
         shareButton.isEnabled = !(imagePickerView.image == nil)
         
+        // If imageView is empty then disable textfields
+        topTextField.isEnabled = !(imagePickerView.image == nil)
+        bottomTextField.isEnabled = !(imagePickerView.image == nil)
+        
         // If camera is not available (i.e. simulator) then disable button
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
@@ -165,6 +169,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func reset(_ sender: Any) {
         imagePickerView.image = nil
+        shareButton.isEnabled = !(imagePickerView.image == nil)
+        topTextField.isEnabled = !(imagePickerView.image == nil)
+        bottomTextField.isEnabled = !(imagePickerView.image == nil)
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
     }
